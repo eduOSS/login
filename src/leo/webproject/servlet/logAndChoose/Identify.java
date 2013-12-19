@@ -20,11 +20,8 @@ public class Identify {
 	  
 	  if(rspsw.next()){
 	  String pwd=rspsw.getString(1);	
-	  System.out.println(pwd+"HELLO!");	  
-	  if(pwd.equals(password)){
+	  if(pwd.equals(password))
 			  iden=true;
-			  System.out.println("equals!");
-	  }
 	  }
 
 	System.out.println(password);
