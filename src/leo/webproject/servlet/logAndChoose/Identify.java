@@ -5,21 +5,31 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 public class Identify {
-public boolean identify(String userName, String password) throws SQLException, ClassNotFoundException{
+	public boolean identify(String userName, String password) throws SQLException, ClassNotFoundException{
 	boolean iden=false;
-
 
 	  ResultSet rspsw = null;
 	
 	  DBConInterf dbconinterf=new DBCon();
 	  Connection con=dbconinterf.getConnection();
-	  String query = "SELECT student.password FROM student WHERE student.sname=?";
+	  String query = "SELECT password FROM student WHERE sname=?";
+	  // HERE SHOLD ADD A IF SENTENSE TO TELL WHETHER QUERY IS NULL 
 	  java.sql.PreparedStatement ps = con.prepareStatement(query);
 	  ps.setString(1, userName);
 	  rspsw=ps.executeQuery();
-	  	 
-	  if(rspsw.getString(3)==password)
-	  iden=true;
+	  
+	  if(rspsw.next()){
+	  String pwd=rspsw.getString(1);	
+	  System.out.println(pwd+"HELLO!");	  
+	  if(pwd.equals(password)){
+			  iden=true;
+			  System.out.println("equals!");
+	  }
+	  }
+
+	System.out.println(password);
+	  
 	  return iden;
+
 }
 }

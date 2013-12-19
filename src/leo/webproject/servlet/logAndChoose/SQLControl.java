@@ -4,8 +4,8 @@ import java.beans.Statement;
 
 public class SQLControl {
 
-	public Statement sqlControl(GetStmtInterf sqlString){
+	//public Statement sqlControl(GetStmtInterf sqlString){
 		
 		
-	}
+	//}
 }

@@ -23,18 +23,20 @@ public class login extends HttpServlet {
 	protected void doPost(HttpServletRequest request,
 			HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		Identify iden = new Identify();
+		Identify identi = new Identify();
 		String userName, password;
 		userName = (String)request.getParameter("userName");
 		password = (String)request.getParameter("passwd");
 
 		try {
 			
-			
-			if (iden.identify(userName, password)) {
+			boolean i=identi.identify(userName, password);
+			  System.out.print(i);
+			if (i) {
 				response.sendRedirect("success.jsp");
 				return;
 			} else {
+
 				response.sendRedirect("login.jsp");
 				return;
 			}
