@@ -1,6 +1,5 @@
 package leo.webproject.servlet.logAndChoose;
 import java.sql.Connection;
-
 import java.sql.SQLException;
 
 public interface DBConInterf {

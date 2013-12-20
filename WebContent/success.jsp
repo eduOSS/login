@@ -9,6 +9,8 @@
 <title>success</title>  
 </head>
 <body>
-HELLO
+<%
+
+%>
 </body>
 </html>
